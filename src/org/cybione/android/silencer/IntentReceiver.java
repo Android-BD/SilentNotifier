@@ -1,4 +1,4 @@
-package org.cybione.android.silentnotifier;
+package org.cybione.android.silencer;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -13,15 +13,15 @@ public class IntentReceiver extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
 		//android.util.Log.d("IntentReceiver", "Intent " + intent.getAction() + " received");
 
-		SilentNotifier silentNotifier = SilentNotifier.getInstance();
-		if (silentNotifier == null)
+		MainService service = MainService.getInstance();
+		if (service == null)
 			return;
 
 		if (intent.getAction().equals(Intent.ACTION_SCREEN_ON))
-			silentNotifier.onScreenOn();
+			service.onScreenOn();
 		if (intent.getAction().equals(INTENT_ACTION_PHONE_STATE))
-			silentNotifier.onPhoneState();
+			service.onPhoneState();
 		if (intent.getAction().equals(INTENT_TELEPHONY_SMS_RECEIVED))
-			silentNotifier.onSMSReceived();
+			service.onSMSReceived();
 	}
 }

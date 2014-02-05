@@ -1,4 +1,4 @@
-package org.cybione.android.silentnotifier;
+package org.cybione.android.silencer.features;
 
 import android.content.Context;
 import android.database.Cursor;

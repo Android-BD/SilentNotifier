@@ -1,4 +1,6 @@
-package org.cybione.android.silentnotifier;
+package org.cybione.android.silencer;
+
+import org.cybione.android.silencer.R;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -11,13 +13,14 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setVisible(true);
 
 		Toast toast;
 		String name = (String) getResources().getText(R.string.app_name);
 		if (!BackgroundService.isStarted()) {
 			toast = Toast.makeText(this, "Starting " + name, Toast.LENGTH_SHORT);
 			this.startService(new Intent(this, BackgroundService.class));
-		} else 
+		} else
 			toast = Toast.makeText(this, name + " is running", Toast.LENGTH_SHORT);
 		toast.show();
 		finish();

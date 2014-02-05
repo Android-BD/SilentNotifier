@@ -1,4 +1,6 @@
-package org.cybione.android.silentnotifier;
+package org.cybione.android.silencer;
+
+import org.cybione.android.silencer.R;
 
 import android.app.Service;
 import android.content.Intent;
@@ -8,7 +10,7 @@ import android.util.Log;
 public class BackgroundService extends Service {
 	private static final String TAG = "BackgroundService";
 
-	private static SilentNotifier mService = null;
+	private static MainService mService = null;
 
 	public static boolean isStarted() {
 		return mService != null;
@@ -21,7 +23,7 @@ public class BackgroundService extends Service {
 		try {
 			if (mService == null) {
 				Log.d(TAG, "Starting service");
-				mService = new SilentNotifier(this);
+				mService = new MainService(this);
 			}
 		} catch (Exception e) {
 			Log.e(TAG, "Cannot start service: " + getResources().getText(R.string.app_name), e);

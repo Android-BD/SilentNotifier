@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.cybione.android.silentnotifier"
+    package="org.cybione.android.silencer"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -14,7 +14,6 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
@@ -22,16 +21,16 @@
         android:icon="@drawable/icon"
         android:label="@string/app_name" >
         <service
-            android:name="org.cybione.android.silentnotifier.BackgroundService"
+            android:name="org.cybione.android.silencer.BackgroundService"
             android:enabled="true"
             android:exported="false" >
             <intent-filter android:priority="100" >
-                <action android:name="org.cybione.android.silentnotifier.BackgroundService" />
+                <action android:name="org.cybione.android.silencer.BackgroundService" />
             </intent-filter>
         </service>
 
         <receiver
-            android:name="org.cybione.android.silentnotifier.BackgroundServiceReceiver"
+            android:name="org.cybione.android.silencer.BackgroundServiceReceiver"
             android:enabled="true"
             android:exported="true" >
             <intent-filter android:priority="100" >
@@ -41,11 +40,13 @@
                 <category android:name="android.intent.category.HOME" />
             </intent-filter>
         </receiver>
-        <receiver android:name="org.cybione.android.silentnotifier.AlarmReceiver" />
+        <receiver android:name="org.cybione.android.silencer.AlarmReceiver" />
 
         <activity
-            android:name="org.cybione.android.silentnotifier.MainActivity"
-            android:label="@string/app_name" >
+            android:name="org.cybione.android.silencer.MainActivity"
+            android:label="@string/app_name"
+            android:noHistory="true"
+            android:excludeFromRecents="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

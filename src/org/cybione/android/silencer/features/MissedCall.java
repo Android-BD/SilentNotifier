@@ -1,4 +1,6 @@
-package org.cybione.android.silentnotifier;
+package org.cybione.android.silencer.features;
+
+import org.cybione.android.silencer.MainService;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -7,7 +9,7 @@ import android.provider.CallLog.Calls;
 import android.util.Log;
 
 public class MissedCall {
-	private static final String TAG = SilentNotifier.TAG + ".MissedCall";
+	private static final String TAG = MainService.TAG + ".MissedCall";
 
 	private Context mContext;
 

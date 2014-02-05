@@ -1,4 +1,4 @@
-package org.cybione.android.silentnotifier;
+package org.cybione.android.silencer;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -8,9 +8,9 @@ public class AlarmReceiver extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		SilentNotifier silentNotifier = SilentNotifier.getInstance();
-		if (silentNotifier != null)
-			silentNotifier.onAlarm();
+		MainService service = MainService.getInstance();
+		if (service != null)
+			service.onAlarm();
 	}
 
 }

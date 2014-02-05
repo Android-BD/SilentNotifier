@@ -1,4 +1,4 @@
-package org.cybione.android.silentnotifier;
+package org.cybione.android.silencer;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
