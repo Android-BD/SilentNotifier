@@ -31,7 +31,7 @@ public class VibrationNotifier {
 	private static final int MIN = 60 * SEC;
 
 	private static final int STEP_CHECK[] =		{ 30 * SEC,		2 * MIN,	-1 };
-	private static final int STEP_DURATION[] =	{ 5 * MIN,		15 * SEC,	-1 };
+	private static final int STEP_DURATION[] =	{ 5 * MIN,		30 * MIN,	-1 };
 
 	private static final long[] VIBRATION_PATTERN = { 0, 500, 200, 500, 200, 500 };
 
